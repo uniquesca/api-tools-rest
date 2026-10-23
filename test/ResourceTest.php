@@ -47,7 +47,7 @@ class ResourceTest extends TestCase
         $this->assertEquals($expected, array_values($identifiers));
     }
 
-    public function badData(): array
+    public static function badData(): array
     {
         return [
             'null'   => [null],
@@ -268,7 +268,7 @@ class ResourceTest extends TestCase
         $this->assertFalse($test);
     }
 
-    public function badDeleteCollections(): array
+    public static function badDeleteCollections(): array
     {
         return [
             'true'     => [true],
@@ -343,7 +343,7 @@ class ResourceTest extends TestCase
         $this->assertFalse($test);
     }
 
-    public function invalidCollection(): array
+    public static function invalidCollection(): array
     {
         return [
             'null'   => [null],
@@ -382,7 +382,7 @@ class ResourceTest extends TestCase
         $this->assertSame($object, $test);
     }
 
-    public function eventsToTrigger(): array
+    public static function eventsToTrigger(): array
     {
         $id = 'resource_id';
 
@@ -446,7 +446,7 @@ class ResourceTest extends TestCase
 
         call_user_func_array([$this->resource, $eventName], $args);
 
-        $this->assertObjectHasAttribute('event', $test);
+        $this->assertObjectHasProperty('event', $test);
         $e = $test->event;
 
         if ($idIsPresent) {
@@ -476,7 +476,7 @@ class ResourceTest extends TestCase
 
         call_user_func_array([$this->resource, $eventName], $args);
 
-        $this->assertObjectHasAttribute('event', $test);
+        $this->assertObjectHasProperty('event', $test);
         $e = $test->event;
 
         $this->assertInstanceOf(ResourceEvent::class, $e);
@@ -484,7 +484,7 @@ class ResourceTest extends TestCase
         $this->assertSame($queryParams, $e->getQueryParams());
     }
 
-    public function badUpdateCollectionData(): array
+    public static function badUpdateCollectionData(): array
     {
         return [
             'object'    => [new stdClass()],
@@ -548,7 +548,7 @@ class ResourceTest extends TestCase
         $this->assertSame($return, $test);
     }
 
-    public function actions(): array
+    public static function actions(): array
     {
         return [
             'get-list'    => ['fetchAll', [null]],

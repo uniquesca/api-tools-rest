@@ -89,7 +89,7 @@ class OptionsListenerTest extends TestCase
      *     1: array<string, string>
      * }>
      */
-    public function validMethodsProvider(): array
+    public static function validMethodsProvider(): array
     {
         return [
             'collection-get'             => [
@@ -180,7 +180,7 @@ class OptionsListenerTest extends TestCase
      *     2: string[]
      * }>
      */
-    public function invalidMethodsProvider(): array
+    public static function invalidMethodsProvider(): array
     {
         return [
             'collection-patch'         => [

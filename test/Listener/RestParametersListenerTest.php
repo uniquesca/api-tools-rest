@@ -32,6 +32,9 @@ class RestParametersListenerTest extends TestCase
     /** @var Parameters */
     private $query;
 
+    /** @var Request */
+    private $request;
+
     /** @var MvcEvent */
     private $event;
 

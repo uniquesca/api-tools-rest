@@ -1,7 +1,8 @@
-Laminas REST
-=======
+# Laminas REST
 
-[![Build Status](https://github.com/laminas-api-tools/api-tools-rest/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/laminas-api-tools/api-tools-rest/actions/workflows/continuous-integration.yml)
+> This is the Uniquesca fork of
+> [laminas-api-tools/api-tools-rest](https://github.com/laminas-api-tools/api-tools-rest).
+> It replaces the original package, so other `laminas-api-tools/*` packages depending on it keep working.
 
 > ## 🇷🇺 Русским гражданам
 >
@@ -19,8 +20,7 @@ Laminas REST
 >
 > You trust us enough to use our software. We ask that you trust us to say the truth on this. We need your help. Go out and protest this unnecessary war. Stop the bloodshed. Say "stop the war!"
 
-Introduction
-------------
+## Introduction
 
 This module provides structure and code for quickly implementing RESTful APIs
 that use JSON as a transport.
@@ -32,25 +32,23 @@ It allows you to create RESTful JSON APIs that use the following standards:
 - [Problem Details for HTTP APIs](http://tools.ietf.org/html/draft-nottingham-http-problem-06),
   aka API Problem, used for reporting API problems.
 
-Requirements
-------------
-  
+## Requirements
+
 Please see the [composer.json](composer.json) file.
 
-Installation
-------------
+## Installation
 
 Run the following `composer` command:
 
 ```console
-$ composer require laminas-api-tools/api-tools-rest
+$ composer require uniquesca/api-tools-rest
 ```
 
 Alternately, manually add the following to your `composer.json`, in the `require` section:
 
 ```javascript
 "require": {
-    "laminas-api-tools/api-tools-rest": "^1.3"
+    "uniquesca/api-tools-rest": "^2.0"
 }
 ```
 
@@ -75,8 +73,7 @@ return [
 > If you use [laminas-component-installer](https://github.com/laminas/laminas-component-installer),
 > that plugin will install api-tools-rest as a module for you.
 
-Configuration
-=============
+## Configuration
 
 ### User Configuration
 
@@ -164,7 +161,7 @@ The name of a query string argument that will set a per-request page size. Not s
 recommend having additional logic to ensure a ceiling for the page size as well, to prevent denial
 of service attacks on your API.
 
-#### User configuration example:
+#### User configuration example
 
 ```php
 'AddressBook\\V1\\Rest\\Contact\\Controller' => [
@@ -219,14 +216,13 @@ Framework application.
 ],
 ```
 
-Laminas Events
-==========
+## Laminas Events
 
 ### Listeners
 
 #### Laminas\ApiTools\Rest\Listener\OptionsListener
 
-This listener is registered to the `MvcEvent::EVENT_ROUTE` event with a priority of `-100`. 
+This listener is registered to the `MvcEvent::EVENT_ROUTE` event with a priority of `-100`.
 It serves two purposes:
 
 - If a request is made to either a REST entity or collection with a method they do not support, it
@@ -241,14 +237,13 @@ This listener is attached to the shared `dispatch` event at priority `100`.  The
 string arguments from the request to the `Resource` object composed in the `RestController`, as well
 as injects the `RouteMatch`.
 
-Laminas Services
-============
+## Laminas Services
 
 ### Models
 
 #### Laminas\ApiTools\Rest\AbstractResourceListener
 
-This abstract class is the base implementation of a [Resource](#laminasrestresource) listener.  Since
+This abstract class is the base implementation of a [Resource](#laminasapitoolsrestresource) listener.  Since
 dispatching of `api-tools-rest` based REST services is event driven, a listener must be constructed to
 listen for events triggered from `Laminas\ApiTools\Rest\Resource` (which is called from the `RestController`).
 The following methods are called during `dispatch()`, depending on the HTTP method:
@@ -276,9 +271,9 @@ to seed the `ResourceEvent` it creates and passes to listeners when triggering e
 
 This is the base controller implementation used when a controller service name matches a configured
 REST service. All REST services managed by `api-tools-rest` will use this controller (though separate
-instances of it), unless they specify a [controller_class](#subkeycontrollerclassoptional) option.
+instances of it), unless they specify a [controller_class](#sub-key-controller_class-optional) option.
 Instances are created via the `Laminas\ApiTools\Rest\Factory\RestControllerFactory` abstract factory.
 
 The `RestController` calls the appropriate method in `Laminas\ApiTools\Rest\Resource` based on the requested HTTP
-method. It returns [HAL](https://github.com/laminas-api-tools/api-tools-hal) payloads on success, and [API
-Problem](https://github.com/laminas-api-tools/api-tools-api-problem) responses on error.
+method. It returns [HAL](https://github.com/uniquesca/api-tools-hal) payloads on success, and [API
+Problem](https://github.com/uniquesca/api-tools-api-problem) responses on error.

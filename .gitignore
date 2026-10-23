@@ -4,3 +4,5 @@
 /phpunit.xml
 /vendor/
 /.phpunit.result.cache
+.idea
+auth.json
