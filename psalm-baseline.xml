@@ -549,13 +549,6 @@
       <code><![CDATA[$this->getRouteMatchClass()]]></code>
       <code><![CDATA[$this->getRouteMatchClass()]]></code>
     </ArgumentTypeCoercion>
-    <DeprecatedClass>
-      <code><![CDATA[$serverUrlHelper->setHost('localhost.localdomain')]]></code>
-      <code><![CDATA[$serverUrlHelper->setScheme('http')]]></code>
-      <code><![CDATA[$urlHelper->setRouter($this->router)]]></code>
-      <code><![CDATA[new ServerUrlHelper()]]></code>
-      <code><![CDATA[new UrlHelper()]]></code>
-    </DeprecatedClass>
     <DeprecatedMethod>
       <code><![CDATA[add]]></code>
       <code><![CDATA[add]]></code>
@@ -630,13 +623,6 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="test/CollectionIntegrationTest.php">
-    <DeprecatedClass>
-      <code><![CDATA[$serverUrlHelper->setHost('localhost.localdomain')]]></code>
-      <code><![CDATA[$serverUrlHelper->setScheme('http')]]></code>
-      <code><![CDATA[$urlHelper->setRouter($this->router)]]></code>
-      <code><![CDATA[new ServerUrlHelper()]]></code>
-      <code><![CDATA[new UrlHelper()]]></code>
-    </DeprecatedClass>
     <ImplicitToStringCast>
       <code><![CDATA[$uri]]></code>
     </ImplicitToStringCast>
@@ -1071,13 +1057,6 @@
     </TooManyArguments>
   </file>
   <file src="test/RestControllerTest.php">
-    <DeprecatedClass>
-      <code><![CDATA[$serverUrlHelper->setHost('localhost.localdomain')]]></code>
-      <code><![CDATA[$serverUrlHelper->setScheme('http')]]></code>
-      <code><![CDATA[$urlHelper->setRouter($this->router)]]></code>
-      <code><![CDATA[new ServerUrlHelper()]]></code>
-      <code><![CDATA[new UrlHelper()]]></code>
-    </DeprecatedClass>
     <DeprecatedMethod>
       <code><![CDATA[add]]></code>
       <code><![CDATA[add]]></code>
@@ -1474,11 +1453,6 @@
     <MissingConstructor>
       <code><![CDATA[$collection]]></code>
     </MissingConstructor>
-  </file>
-  <file src="test/TestAsset/JsonSerializable.php">
-    <MethodSignatureMustProvideReturnType>
-      <code><![CDATA[jsonSerialize]]></code>
-    </MethodSignatureMustProvideReturnType>
   </file>
   <file src="test/TestAsset/TestResourceListener.php">
     <InvalidReturnType>

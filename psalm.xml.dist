@@ -23,6 +23,13 @@
         <ClassMustBeFinal errorLevel="suppress"/>
         <!-- Typed class constants require PHP 8.3; remove once PHP 8.2 support is dropped -->
         <MissingClassConstType errorLevel="suppress"/>
+        <!-- laminas-view 2.x deprecates these helpers; reporting of calls on them is non-deterministic across threads -->
+        <DeprecatedClass>
+            <errorLevel type="suppress">
+                <referencedClass name="Laminas\View\Helper\ServerUrl"/>
+                <referencedClass name="Laminas\View\Helper\Url"/>
+            </errorLevel>
+        </DeprecatedClass>
     </issueHandlers>
 
     <plugins>

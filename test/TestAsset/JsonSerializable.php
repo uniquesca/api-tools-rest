@@ -8,8 +8,7 @@ use JsonSerializable as JsonSerializableInterface;
 
 class JsonSerializable implements JsonSerializableInterface
 {
-    /** @return array */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return ['foo' => 'bar'];
     }
